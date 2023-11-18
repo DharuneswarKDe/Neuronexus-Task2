@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="official-store.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop&Shop</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+  <script>
+    // index.js or App.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
+import App from './App';
+
+ReactDOM.render(
+  <Auth0Provider
+    domain="your-auth0-domain"
+    clientId="your-client-id"
+    redirectUri={window.location.origin}
+  >
+    <App />
+  </Auth0Provider>,
+  document.getElementById('root')
+);
+
+  </script>
+</html>
